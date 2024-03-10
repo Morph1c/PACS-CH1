@@ -10,4 +10,8 @@ If hold then $\alpha_k = \alpha_0$, if not then take $\alpha_0 = \alpha_0 / 2$ a
 
 # Prerequisite
 Solver is written in C++17/20 and STL is used so that it not requires additional libraries.
+To clone the repository on local, type:
+```bash
+git clone git@github.com:Morph1c/PACS-CH1
+```
 

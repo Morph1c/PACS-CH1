@@ -1,4 +1,4 @@
-# GRADIENT-BASED OPTIMIZER 
+# Gradient-Based Optimizer
 Repository for the first challenge of the course PACS. 
 <br>
 Implemented a gradient-based optimizer for solving the problem: $$x = argmin_{y \in R^d} \ f(x)$$

@@ -17,8 +17,8 @@ using fun = std::function<double(vect)>;
 struct params
 {
     vect x0 = {0. , 0.};
-    double epsilon_step = 1E-4;
-    double epsilon_residual = 1E-4;
+    double epsilon_step = 1E-6;
+    double epsilon_residual = 1E-6;
     double h = 0.1;
     double lr = 0.05; // NEED TO BE CHANGED TO IMPLEMENT DIFFERENT LEARNING STRATEGIES
     int k_max = 500;
@@ -26,15 +26,17 @@ struct params
 
 };
 
+params my_param;
+
 void test_function(void);
-vect solver(params const & my_params, fun  const &f );
-double obj_func(vect const & x);
+vect solver(fun const & f);
+double obj_func(vect x);
 
 // Helper functions (need to be moved in an Utilities.hpp files)
-vect grad(vect const & x, fun const & f, params const & my_param);
-vect concat(vect const & x, vect const & y, bool op, params const & my_param);
-vect mult(vect & x, double val);
-double norm(vect const & x, params const & my_param);
+vect grad(vect const & x, fun const & f);
+template <bool op> vect concat(vect const & x, vect const & y);
+vect mult(vect & x, double & val);
+double norm(vect const & x);
 
 
 #endif

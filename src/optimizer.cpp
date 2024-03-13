@@ -4,7 +4,8 @@
 #include <cmath>
 
 double obj_func(vect x){
-    return x[0]*x[1] + 4*pow(x[0], 4) + pow(x[1], 2) + 3*x[0];
+    //return x[0]*x[1] + 4*pow(x[0], 4) + pow(x[1], 2) + 3*x[0];
+    return x[0]*x[0] + x[1]*x[1] - 5;
 }
 
 
@@ -39,7 +40,7 @@ vect solver(fun const & f){
 
     int k{0};
     // choosing learning rate strategies at compile time
-    lr const lr_scheme = inv_decay;
+    lr const lr_scheme = arm;
 
     double my_lr = get_lr<lr_scheme>(k, f, x_k); 
     vect x_kk = concat<false>(x_k, mult(mgrad, my_lr));

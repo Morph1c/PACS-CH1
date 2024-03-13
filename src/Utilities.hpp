@@ -19,7 +19,7 @@ using fun = std::function<double(vect)>;
 // parameters struct
 struct params
 {
-    vect x0 = {0. , 0.};
+    vect x0 = {10. , 10.};
     double epsilon_step = 1E-6;
     double epsilon_residual = 1E-6;
     double h = 0.1;

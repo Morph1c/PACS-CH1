@@ -16,9 +16,15 @@ enum lr{
     arm
 };
 
-vect solver(fun const & f);
-double obj_func(vect x);
-template <lr> double get_lr(int k);
-
+class Optimizer{
+    private:
+        params my_param;
+    
+    public:
+        Optimizer(params const & p): my_param(p){};
+        vect solver(fun const & f);
+        //double obj_func(vect x);
+        template <lr> double get_lr(int k, fun const & f, vect const & x_k);
+};
 
 #endif

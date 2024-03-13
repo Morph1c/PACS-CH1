@@ -31,14 +31,17 @@ struct params
 
 };
 
-params my_param;
+//params my_param;
 
 
 // Helper functions (need to be moved in an Utilities.hpp files)
-vect grad(vect const & x, fun const & f);
+vect grad(vect const & x, fun const & f, double h);
 template <bool op> vect concat(vect const & x, vect const & y);
 vect mult(vect & x, double & val);
 double norm(vect const & x);
+
+// Helper for using 
+
 
 
 #endif

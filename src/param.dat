@@ -1,0 +1,11 @@
+## file for getting params struct
+##
+start_value = {11, 11}
+epsilon_step = 100;
+epsilon_residual = 1E-6;
+h = 0.1;
+lr = 0.05; // is the alpha_0 of the documenation
+mu = 0.4;
+sigma = 0.3;
+k_max = 500;
+dim = 2;

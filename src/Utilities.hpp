@@ -15,6 +15,12 @@
 using vect = std::vector<double>;
 using fun = std::function<double(vect)>;
 
+// enumeration for the choice of the learning rate
+enum lr{
+    exp_decay,
+    inv_decay,
+    arm
+};
 
 // parameters struct
 struct params

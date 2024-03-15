@@ -36,7 +36,8 @@ double Optimizer::get_lr(int k, vect const & x_k){
     return my_lr;
 }
 
-void Optimizer::solver(){
+void 
+Optimizer::solver(){
    
     vect x_k = my_param.x0;
     vect mgrad = grad(x_k, m_fun, my_param.h);

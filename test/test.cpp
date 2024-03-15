@@ -30,8 +30,7 @@ int main(int argc, char ** argv){
     my_param.dim = gp("dim", my_param.dim);
 
     Optimizer op(my_param, obj_func);
-    vect sol(my_param.dim, 0.0);
-    cout << "mu is " << my_param.mu << std::endl;
+    cout << "k_max is " << my_param.k_max << std::endl;
     op.solver();
     op.get_solution();
 

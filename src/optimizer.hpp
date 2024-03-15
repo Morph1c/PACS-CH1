@@ -9,13 +9,6 @@
 
 #include "Utilities.hpp"
 
-// enumeration for the choice of the learning rate
-enum lr{
-    exp_decay,
-    inv_decay,
-    arm
-};
-
 class Optimizer{
     private:
         params my_param;
@@ -24,7 +17,7 @@ class Optimizer{
     public:
         Optimizer(params const & p, fun const & f);
         void solver();
-        template <lr> double get_lr(int k, vect const & x_k);
+        template <lr lr_scheme> double get_lr(int k, vect const & x_k);
         void get_solution();
 };
 

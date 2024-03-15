@@ -22,6 +22,6 @@ make
 ```
 to compile and get as output $text$ file and execute it:
 ```bash
-./test
+./test -f param.dat
 ```
-to get the optimizer work a compute the minimal point
+to get the optimizer work a compute the minimal point, given the parameters in the "param.dat" file

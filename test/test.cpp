@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "optimizer.cpp"
-#include "getpot/GetPot"
+#include "getpot_lib/GetPot"
 
 using std::cout;
 

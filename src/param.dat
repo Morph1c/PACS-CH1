@@ -1,5 +1,7 @@
 ## file for getting params struct
 ##
+x0_0 = 10
+x0_1 = 23
 start_value = {11, 11}
 epsilon_step = 1E-6;
 epsilon_residual = 1E-6;

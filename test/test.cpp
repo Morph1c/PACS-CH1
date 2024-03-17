@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include "optimizer.cpp"
-#include "../getpot/GetPot"
+#include "getpot/GetPot"
 
 using std::cout;
 
@@ -28,7 +28,16 @@ int main(int argc, char ** argv){
     my_param.sigma = gp("sigma", my_param.sigma);
     my_param.k_max = gp("k_max", my_param.k_max);
     my_param.dim = gp("dim", my_param.dim);
-
+    
+        //my_param.x0.resize(my_param.dim, 0.0);
+    std::string point = "x0_";
+    for(std::size_t i = 0; i < my_param.dim; i++){
+        point += std::to_string(i);
+        my_param.x0[i] = gp(point.c_str(), 0.0);
+        point = "x0_";
+    }
+    
+    cout << my_param.x0[1] << std::endl;
     Optimizer op(my_param, obj_func);
     cout << "k_max is " << my_param.k_max << std::endl;
     op.solver();

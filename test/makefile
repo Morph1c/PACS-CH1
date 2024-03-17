@@ -1,4 +1,4 @@
-CPPFLAGS=-I../src
+CPPFLAGS=-I../src -I../include
 CXXFLAGS=-std=c++17 -Wall -O2
 #OBJECTS = Utilities.o optimizer.o
 

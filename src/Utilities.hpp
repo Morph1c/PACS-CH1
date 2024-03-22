@@ -1,7 +1,9 @@
 /////
-// Implement all the utilities need for dealing with vectorial quantities
-// so it implement functions for evaluating norms, vector summationa and subtraction
-// and also scalar multiplication
+// Implement all the utilities need for the optimizer class
+// in particular implement:
+// -methods for dealing with vector<double>: norm, sum and subtraction, gradient with respect of a given function in a given point
+// -struct of the parameters
+// -enumeration for choosing the type of learning rate scheme
 //
 
 #ifndef UTILITIES
@@ -14,9 +16,10 @@
 // R2 generic function
 using vect = std::vector<double>;
 using fun = std::function<double(vect)>;
+using m_grad = std::function<vect(vect)>;
 
 // enumeration for the choice of the learning rate
-enum lr{
+enum lr_type{
     exp_decay,
     inv_decay,
     arm
@@ -31,6 +34,7 @@ struct params
     double h = 0.1;
     double lr = 0.05; // is the alpha_0 of the documenation
     double mu = 0.2;
+    double ni = 0.9;
     double sigma = 0.3;
     int k_max = 500;
     int dim = 2;
@@ -45,9 +49,6 @@ vect grad(vect const & x, fun const & f, double h);
 template <bool op> vect concat(vect const & x, vect const & y);
 vect mult(vect & x, double & val);
 double norm(vect const & x);
-
-// Helper for using 
-
 
 
 #endif

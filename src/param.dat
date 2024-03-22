@@ -1,13 +1,14 @@
 ## file for getting params struct
 ##
-x0_0 = 10
-x0_1 = 23
-start_value = {11, 11}
+x0_0 = 0
+x0_1 = 0
 epsilon_step = 1E-6;
 epsilon_residual = 1E-6;
-h = 0.1;
-lr = 0.05; // is the alpha_0 of the documenation
+h = 0.01;
+lr = 0.0125; // is the alpha_0 of the documenation
 mu = 0.2;
 sigma = 0.3;
 k_max = 500;
 dim = 2;
+grad_scheme = 1
+exact_grad = 1

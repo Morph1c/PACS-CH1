@@ -16,8 +16,9 @@ git clone git@github.com:Morph1c/PACS-CH1
 ```
 # Usage
 Now implemented only a very simpple optimization problem that optimize $f(x) = x_1 x_2 + 4 x_1^4 + x_2^2 + 3 x_1$.
-Just type:
+After cloning the repository, Just type:
 ```bash
+cd test
 make
 ```
 to compile and get as output $text$ file and execute it:

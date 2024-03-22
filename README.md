@@ -21,7 +21,7 @@ After cloning the repository, Just type:
 cd test
 make
 ```
-to compile and get as output $text$ file and execute it:
+to compile and get as output $test$ file and execute it:
 ```bash
 ./test -f ../src/param.dat
 ```

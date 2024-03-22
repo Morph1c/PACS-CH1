@@ -24,4 +24,5 @@ to compile and get as output $text$ file and execute it:
 ```bash
 ./test -f ../src/param.dat
 ```
-to get the optimizer work a compute the minimal point, given the parameters in the "param.dat" file
+to get the optimizer work a compute the minimal point, given the parameters in the "param.dat" file.
+For a better explanation of the structure of the parameters and how you can provided it through the param.dat file, read the documentation inside /doc

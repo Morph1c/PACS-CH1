@@ -21,12 +21,12 @@ lr = 0.0125; // is the alpha_0 of the documenation
 mu = 0.2;
 sigma = 0.3;
 ```
-finally we have k_max for the maximum number of iterations, dim is the dimension of the space $R^{dim}$ and grad_scheme is for selecting the optimization algorithm where 0 for using gradient descent while 1 for using Nesterov algorithm. Last exact grad takes value 0 for using finite difference scheme for computing the derivative while 1 for using exact formula of the gradient that need to be defined inside the Test.cpp file
+finally we have k_max for the maximum number of iterations, dim is the dimension of the space $R^{dim}$ and grad_scheme is for selecting the optimization algorithm where 0 for using gradient descent while 1 for using Nesterov algorithm, exact grad takes value 0 for using finite difference scheme for computing the derivative while 1 for using exact formula of the gradient that need to be defined inside the Test.cpp file. Last lr_scheme is used to determine the type of learning rate scheme to be used (0 = exponential decay, 1 = inverse decay, 2 = Armjirno's rule)
 ```bash
 
 k_max = 500;
 dim = 2;
 grad_scheme = 1
 exact_grad = 1
-
+lr_scheme = 2
 ```

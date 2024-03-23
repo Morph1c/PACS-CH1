@@ -4,8 +4,6 @@ CPPFLAGS ?=  -w -I../src -I../include
 
 
 EXEC     = test
-#LDFLAGS ?= -L../../../../../pacs-examples/Examples/lib
-#LIBS  ?= -lmuparser
 
 all: $(EXEC)
 

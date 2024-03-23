@@ -31,14 +31,15 @@ int main(int argc, char ** argv){
     my_param.sigma = gp("sigma", my_param.sigma);
     my_param.k_max = gp("k_max", my_param.k_max);
     my_param.dim = gp("dim", my_param.dim);
-    
+    my_param.lr_choice = static_cast<lr_type>(gp("lr_scheme", 0));
+
     // Fill the hyperparameters
     my_scheme_num = gp("grad_scheme", 0);
     exact_grad = gp("exact_grad", 0);
 
     // used for fill the initial guess vector from getpot    
     std::string point = "x0_";
-    for(std::size_t i = 0; i < my_param.dim; i++){
+    for(int i = 0; i < my_param.dim; i++){
         point += std::to_string(i);
         my_param.x0[i] = gp(point.c_str(), 0.0);
         point = "x0_";
@@ -49,16 +50,16 @@ int main(int argc, char ** argv){
     if(my_scheme_num == grad_descent){
         cout << "Running classical gradient descent..." << std::endl;
         if (exact_grad == true)
-            op.solver<grad_descent, arm, true>();
+            op.solver<grad_descent, true>();
         else
-            op.solver<grad_descent, arm, false>();
+            op.solver<grad_descent, false>();
     }
     else{
         cout << "Running nesterov algorithm..." << std::endl;
         if (exact_grad)
-            op.solver<nesterov, exp_decay, true>();
+            op.solver<nesterov, true>();
         else
-            op.solver<nesterov, exp_decay, false>();    
+            op.solver<nesterov, false>();    
     }
     
     op.get_solution();

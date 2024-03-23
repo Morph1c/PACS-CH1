@@ -25,8 +25,8 @@ class Optimizer{
         m_grad const my_grad;
     public:
         Optimizer(params const & _p, fun const & _f, m_grad const & _mgrad);
-        template <grad_scheme sch, lr_type lscheme, bool exact_grad> void solver();
-        template <lr_type lr_scheme> double get_lr(int k, vect const & x_k) const;
+        template <grad_scheme sch, bool exact_grad> void solver();
+        double get_lr(int k, vect const & x_k) const;
         void get_solution() const;
 };
 

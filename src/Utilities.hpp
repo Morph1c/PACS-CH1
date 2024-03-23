@@ -20,9 +20,9 @@ using m_grad = std::function<vect(vect)>;
 
 // enumeration for the choice of the learning rate
 enum lr_type{
-    exp_decay,
-    inv_decay,
-    arm
+    exp_decay = 0,
+    inv_decay = 1,
+    arm = 2
 };
 
 // parameters struct
@@ -38,6 +38,7 @@ struct params
     double sigma = 0.3;
     int k_max = 500;
     int dim = 2;
+    lr_type lr_choice = exp_decay;
 
 };
 

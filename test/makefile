@@ -1,16 +1,22 @@
-CPPFLAGS=-I../src -I../include
-CXXFLAGS=-std=c++17 -Wall -O2
-#OBJECTS = Utilities.o optimizer.o
+CXX      ?= g++
+CXXFLAGS ?= -std=c++20
+CPPFLAGS ?=  -w -I../src -I../include
 
-all: test
-test: test.o
-	g++ test.o -o test
 
-test.o: optimizer.o Utilities.o
-	g++ -l Utilities.o -l optimizer.o -c test.cpp $(CPPFLAGS)
-Utilities.o: ../src/Utilities.cpp
-	g++ -c ../src/Utilities.cpp
-optimizer.o: ../src/optimizer.cpp
-	g++ -c ../src/optimizer.cpp
+EXEC     = test
+#LDFLAGS ?= -L../../../../../pacs-examples/Examples/lib
+#LIBS  ?= -lmuparser
+
+all: $(EXEC)
+
+%.o: %.cpp optimizer.hpp Utilities.hpp
+	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) $<
+
+$(EXEC): %: %.o
+	$(CXX) $(CXXFLAGS) $(LDFLAGS) $< $(LIBS) -o $@
+
 clean:
-	rm test test.o Utilities.o optimizer.o
+	$(RM) *.o
+	$(RM) $(EXEC)
+distclean: clean
+	$(RM) *~

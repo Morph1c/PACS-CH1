@@ -5,7 +5,7 @@
 //
 
 #include <iostream>
-#include "optimizer.cpp"
+#include "optimizer.cpp" //@note you shoul dnot include source files!
 #include "getpot_lib/GetPot"
 
 using std::cout;

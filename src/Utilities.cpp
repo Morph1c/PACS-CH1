@@ -33,6 +33,8 @@ vect mult(vect & x, double & val){
 // template function for computing the sum or subtraction between two vectors
 // true -> compute the sum
 // false -> compute subtraction
+//@note Definition of function templates should go in the header file, not in the source file.
+//@note here it is better to define operator+ and operator-? 
 template <bool op>
 vect concat(vect const & x, vect const & y){
     int dim = x.size();
@@ -50,6 +52,6 @@ vect concat(vect const & x, vect const & y){
 double norm(vect const & x){
     double res = 0;
     for(int i = 0; i < x.size(); ++i)
-        res += pow(x[i], 2);
+        res += pow(x[i], 2);//@note here you can just do x[i]*x[i] avoiding the call to Pow. If the compiler is smart you get better efficiency.
     return sqrt(res);
 }
